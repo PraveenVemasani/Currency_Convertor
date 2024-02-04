@@ -8,7 +8,7 @@ url_symbols = "https://currency-conversion-and-exchange-rates.p.rapidapi.com/sym
 url_convert = "https://currency-conversion-and-exchange-rates.p.rapidapi.com/convert"
 
 headers = {
-    "X-RapidAPI-Key": "059ec661eamshb86fd3689ccb760p1db0cajsn7b48c2a6612f",
+    "X-RapidAPI-Key": "YOUR-API-KEY",
     "X-RapidAPI-Host": "currency-conversion-and-exchange-rates.p.rapidapi.com"
 }
 
