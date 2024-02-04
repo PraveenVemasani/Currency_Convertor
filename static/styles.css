@@ -11,7 +11,16 @@ body {
     min-height: 100vh; /* Ensure the table takes at least the full height of the viewport */
     background-color: #f4f4f4;
 }
+.header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
 
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
 table {
     border-collapse: collapse;
     width: 80%; /* Set the table width to 80% of the viewport width */
@@ -48,20 +57,6 @@ button:hover {
     background-color: #45a049;
 }
 
-#symbolTable {
-    width: 80%; /* Set the table width to 80% of the viewport width */
-    margin: 0 auto; /* Center the table horizontally */
-}
-
-#symbolTable td {
-    border: 1px solid #ddd;
-    padding: 30px;
-    text-align: center;
-    width: 20%; /* Adjust the width of each column to fill the available space evenly */
-    margin: 1%; /* Add margin to create space between columns */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
 #result {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
@@ -83,4 +78,45 @@ button:hover {
 #result strong {
     color: #ade64c; /* Red color */
     font-weight: bold; /* Make the strong text bold */
+}
+
+#symbolTable {
+    width: 80%; /* Set the table width to 80% of the viewport width */
+    margin: 0 auto; /* Center the table horizontally */
+    box-shadow: 0px 9px 30px 0px rgba(255,149,5,0.3);
+}
+
+#symbolTable td {
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    width: 20%; /* Adjust the width of each column to fill the available space evenly */
+    margin: 1%; /* Add margin to create space between columns */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.footer {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: grey;
+    margin-top: 30px;
+}
+
+.footer p {
+   display: inline-block;
+   margin-right: 20px; 
+}
+
+.footer-links {
+   display: inline-block; 
+}
+
+.footer-links a {
+   margin-right: 10px;
+   color: grey;
+   text-decoration: none;
+}
+
+.footer-links a:hover {
+   text-decoration: underline;
 }
