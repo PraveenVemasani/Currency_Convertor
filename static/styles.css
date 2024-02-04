@@ -1,0 +1,86 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the table vertically */
+    min-height: 100vh; /* Ensure the table takes at least the full height of the viewport */
+    background-color: #f4f4f4;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%; /* Set the table width to 80% of the viewport width */
+    margin-bottom: 20px;
+    margin-top: 20px; /* Add margin to the top */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#symbolTable {
+    width: 80%; /* Set the table width to 80% of the viewport width */
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+#symbolTable td {
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    width: 20%; /* Adjust the width of each column to fill the available space evenly */
+    margin: 1%; /* Add margin to create space between columns */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#result {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Increase the width */
+    margin: 20px auto; /* Center the result container horizontally */
+}
+
+#result p {
+    font-size: 18px; /* Increase font size */
+    line-height: 1.6;
+    color: #34495e; /* Darker gray color */
+    margin: 15px 0; /* Increase top and bottom margin */
+}
+
+#result strong {
+    color: #ade64c; /* Red color */
+    font-weight: bold; /* Make the strong text bold */
+}

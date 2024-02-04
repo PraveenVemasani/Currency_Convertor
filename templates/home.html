@@ -1,0 +1,81 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <table rules="all">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Amount</th>
+                <th style="width: 25%;">From</th>
+                <th style="width: 25%;">To</th>
+                <th style="width: 25%;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form id="conversion-form">
+                <tr>
+                    <td>
+                        <input type="number" placeholder="Value" id="inp" required>
+                    </td>
+                    <td>
+                        <select id="fromCurrency" required>
+                            {% for symbol, name in currencies.items() %}
+                                <option value="{{ symbol }} {{name}}">{{ symbol }} - <p>{{name}}</p></option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select id="toCurrency" required>
+                            {% for symbol, name in currencies.items() %}
+                                <option value="{{ symbol }} {{name}}">{{ symbol }} - <p>{{name}}</p></option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" id="convertButton" onclick="convert()">Convert</button>
+                    </td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+    
+    <!-- Display the result -->
+    
+    {% if result %}
+        <div id="result">
+            <p>
+                {{ result.query.amount }} <strong>{{countries.from_country}}</strong> <sub><small> ({{ result.query.from }})</small></sub>= {{ result.result }}  <strong>{{countries.to_country}}</strong> <sub><small>({{ result.query.to }})</small></sub><br>
+                <sub>Conversion Rate is  {{ result.info.rate }}<br>
+                Date: {{ result.date }}</sub><br> 
+            </p>
+        </div>
+    {% endif %}
+
+    <h2>Supported Countries</h2>
+
+    <table id="symbolTable" rules="all">
+        <tbody>
+            {% for symbol, name in currencies.items() %}
+                {% if loop.index0 % 5 == 0 %}
+                    <tr>
+                {% endif %}
+                <td>
+                    <img src="https://flagsapi.com/{{ symbol[:2] }}/flat/64.png" alt="{{ symbol }}">
+                    <p>{{ symbol }}</p>
+                    <p>{{ name }}</p>
+                </td>
+                {% if loop.index % 5 == 0 or loop.last %}
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
